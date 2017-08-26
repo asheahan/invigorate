@@ -25,7 +25,9 @@ SECRET_KEY = '8^9%*e-3mc_b9pv&vb1iw$a^y5**bi15)*j%ud)2^*tdv@0kx2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'invigorate-app.herokuapp.com'
+]
 
 
 # Application definition
