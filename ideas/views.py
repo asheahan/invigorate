@@ -1,6 +1,15 @@
-from django.shortcuts import render
-from django.http import HttpResponse
 
-# Create your views here.
+from django.shortcuts import get_list_or_404, get_object_or_404, render
+
+from .models import Idea, Inspiration
+
 def index(request):
-    return HttpResponse('Hello, world. You\'re at the ideas generator index.')
+    user_ideas = Idea.objects.order_by('-created_date')[:5]
+    context = {'user_ideas': user_ideas}
+    return render(request, 'ideas/index.html', context)
+
+def detail(request, idea_id):
+    idea = get_object_or_404(Idea, pk=idea_id)
+    inspirations = get_list_or_404(Inspiration, idea=idea)
+    context = {'idea': idea, 'inspirations': inspirations}
+    return render(request, 'ideas/detail.html', context)

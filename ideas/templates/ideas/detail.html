@@ -1,0 +1,9 @@
+<h1>{{ idea.label }}</h1>
+<p>{{ idea.description }}</p>
+<hr>
+<h3>Inspirations</h3>
+<ul>
+{% for inspiration in inspirations %}
+    <li>{{ inspiration.label }}</li>
+{% endfor %}
+</ul>
