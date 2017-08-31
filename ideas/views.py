@@ -3,6 +3,9 @@ from django.shortcuts import get_list_or_404, get_object_or_404, render
 
 from .models import Idea, Inspiration
 
+def home(request):
+    return render(request, 'ideas/home.html')
+
 def index(request):
     user_ideas = Idea.objects.order_by('-created_date')[:5]
     context = {'user_ideas': user_ideas}
