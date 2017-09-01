@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Andrew Sheahan">
+    <meta name="description" content="An app that helps writers develop their ideas">
+    
+    <title>{% block title %}Invigorate | Energize your writing{% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ideas/style.css' %}" />
+</head>
+
+<body>
+    <header>
+        <h1><a href="{% url 'home' %}">Invigorate</a></h1>
+    </header>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

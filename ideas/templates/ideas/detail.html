@@ -1,9 +1,19 @@
-<h1>{{ idea.label }}</h1>
-<p>{{ idea.description }}</p>
-<hr>
-<h3>Inspirations</h3>
-<ul>
-{% for inspiration in inspirations %}
-    <li>{{ inspiration.label }}</li>
-{% endfor %}
-</ul>
+{% extends "ideas/template.html" %}
+{% load humanize %}
+
+{% block title %}Invigorate | View idea{% endblock %}
+
+{% block content %}
+    <h1>{{ idea.label }}</h1>
+    <p>{{ idea.created_date|naturaltime }}
+    <p>{{ idea.description }}</p>
+    <hr>
+    {% if inspirations %}
+        <h3>Inspirations</h3>
+        <ul>
+        {% for inspiration in inspirations %}
+            <li>{{ inspiration.label }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
