@@ -6,7 +6,10 @@
     {% if user_ideas %}
         <ul>
             {% for idea in user_ideas %}
-                <li><a href="{% url 'ideas:detail' idea.id %}">{{ idea.label }}</a></li>
+                <li>
+                    <a href="{% url 'ideas:detail' idea.id %}">{{ idea.label }}</a>
+                    <a href="{% url 'ideas:edit' idea.id %}">Edit</a>
+                </li>
             {% endfor %}
         </ul>
     {% else %}

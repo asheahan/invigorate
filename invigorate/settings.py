@@ -123,3 +123,6 @@ STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+LOGIN_URL = '/login/'
+LOGOUT_URL = '/logout/'

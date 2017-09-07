@@ -14,6 +14,18 @@
 <body>
     <header>
         <h1><a href="{% url 'home' %}">Invigorate</a></h1>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                    <li>Logged in as: {{user}}</li>
+                    <li><a href="{% url 'ideas:index' %}">My Ideas</a></li>
+                    <li><a href="{% url 'ideas:new' %}">New</a></li>
+                    <li><a href="{% url 'logout' %}?next=/">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}?next=/">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
     </header>
 
     <div id="content">

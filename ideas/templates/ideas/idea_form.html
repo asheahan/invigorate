@@ -1,0 +1,9 @@
+{% extends "ideas/template.html" %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}
